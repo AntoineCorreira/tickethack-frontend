@@ -91,8 +91,10 @@ h4 {
 #departure {
     height: 35px;
     border-radius: 5%;
-    border: none;
-    box-shadow: 0 0 0 0 black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
 }
 
 #arrival {
@@ -133,7 +135,8 @@ button {
 }
 
 #imgContainer {
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
     border-bottom: 2px solid;
     border-color: #a8d5c8;
     margin-bottom: 20px;;
@@ -141,11 +144,12 @@ button {
 
 img {
     margin-top: 50px;
-    max-height: 70%;
+    max-height: 50%;
 }
 
 p {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     padding: 10px;
+    margin-bottom: 20px;
 }

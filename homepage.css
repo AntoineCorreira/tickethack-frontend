@@ -94,18 +94,21 @@ h4 {
 }
 
 #departure {
-    height: 35px;
-    border-radius: 5%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
 }
 
 #arrival {
-    height: 35px;
-    border-radius: 5%;
+    height: 50px;
+    border-radius: 10px;
     border: none;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5px;
 }
 
 #dateContainer {
@@ -114,9 +117,13 @@ h4 {
 
 #date {
     width: 98%;
-    height: 35px;
+    height: 50px;
     background-color: #eff2f1;
     border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #searchBtnContainer {
@@ -136,7 +143,9 @@ button {
     flex-direction: column;
     background-color: white;
     border-radius: 5%;
-    width: 30%
+    width: 30%;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 #imgContainer {
@@ -157,4 +166,29 @@ p {
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+.tripsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    background-color:#eff2f1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.bookBtnContainer {
+    margin: 5px;
+}
+
+.book {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
 }

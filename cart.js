@@ -3,41 +3,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const totalPriceElement = document.getElementById('total');
     const purchaseButton = document.querySelector('.purchase');
-    const deleteButtons = document.querySelectorAll('.delete-btn');
 
     function updateTotalPrice() {
-        console.log('Updating total price'); // Vérifie que la fonction est appelée
         let total = 0;
         document.querySelectorAll('.cart-item').forEach(item => {
             const price = parseFloat(item.getAttribute('data-price'));
             total += price;
         });
-        totalPriceElement.innerText = total + '€';
+        console.log('Total Price Updated:', total); // Ajout de log
+        totalPriceElement.innerText = total.toFixed(2) + '€';
     }
 
     function deleteItem(itemId) {
-        console.log('Deleting item:', itemId); // Vérifie que la fonction est appelée
         const item = document.getElementById(itemId);
-        item.remove();
-        updateTotalPrice();
+        if (item) {
+            item.remove();
+            console.log('Item Removed:', itemId); // Ajout de log
+            updateTotalPrice();
+        }
     }
 
     purchaseButton.addEventListener('click', function() {
-        console.log('Purchase button clicked'); // Vérifie que le bouton est cliqué
         const selectedItems = [];
         document.querySelectorAll('.cart-item').forEach(item => {
             const id = item.id;
-            selectedItems.push(id);
+            const price = item.getAttribute('data-price');
+            const detailsElement = item.querySelector('.details');
+            const timeElement = item.querySelector('.time');
+
+            if (detailsElement && timeElement) { // Vérifie que les éléments existent
+                const details = detailsElement.innerText;
+                const time = timeElement.innerText;
+
+                selectedItems.push({ id, price, details, time });
+            } else {
+                console.error('Details or time element not found for item:', id);
+            }
         });
-        window.location.href = `bookings.html?trips=${JSON.stringify(selectedItems)}`;
+
+        console.log('Selected Items:', selectedItems); // Ajout de log
+
+        // Vérification si le panier est vide
+        if (selectedItems.length === 0) {
+            window.location.href = 'noticket.html'; // Redirection vers la page "No Tickets in your cart"
+        } else {
+            // Redirection vers bookings.html avec les données des trajets
+            window.location.href = `bookings.html?trips=${encodeURIComponent(JSON.stringify(selectedItems))}`;
+        }
     });
 
-    // Attach delete event to buttons
-    deleteButtons.forEach(button => {
-        console.log('Attaching click event to delete button'); // Vérifie que l'événement est attaché
+    // Attacher l'événement de suppression aux boutons
+    document.querySelectorAll('.delete-btn').forEach(button => {
         button.addEventListener('click', function() {
             const itemId = this.closest('.cart-item').id;
-            console.log('Delete button clicked for:', itemId); // Vérifie que le bouton delete est cliqué
             deleteItem(itemId);
         });
     });

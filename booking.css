@@ -1,0 +1,114 @@
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+   margin: 0;
+   padding: 0;
+}
+
+.booking-container {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   width: 80%;
+   max-width: 800px;
+   box-sizing: border-box;
+   text-align: center;
+   margin: 40px auto; 
+}
+
+h2 {
+   color: #333;
+   margin-bottom: 20px;
+   text-align: center; 
+   font-size: 15px;
+}
+
+.booking-details {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+}
+
+.booking-info {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #f0f0f0;
+   padding: 10px;
+   width: 100%;
+   box-sizing: border-box;
+   border-radius: 4px;
+}
+
+.booking-info span {
+   flex: 1;
+   text-align: center;
+   font-size: 16px;
+   color: #333;
+}
+
+.route {
+   font-weight: bold;
+}
+
+.time {
+   color: #555;
+}
+
+.price {
+   color: #28a745;
+   font-weight: bold;
+}
+
+.departure-time {
+   color: #555;
+}
+
+.message {
+   margin-top: 20px;
+   color:  #4d9986;
+   font-size: 16px;
+   border-top: 2px solid #000; 
+   padding: 10px; 
+}
+
+header {
+   display: flex;
+   padding: 10px;
+}
+
+#title {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   margin: 5px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 2em;
+   font-weight: bold;
+   color: #4d9986;
+}
+
+#menu {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: center;
+   width: 100vw;
+}
+
+#menu a {
+   text-decoration: none;
+   color: inherit;
+}
+
+#cart {
+   margin: 5px;
+   font-family: 'Roboto', sans-serif; 
+}
+
+#bookings {
+   margin: 5px;
+   font-family: 'Roboto', sans-serif; 
+}

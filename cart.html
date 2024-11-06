@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <script>
+        function updateCart(item, time, price) {
+            document.getElementById('item1').innerText = item;
+            document.getElementById('time1').innerText = time;
+            document.getElementById('price1').innerText = price + '€';
+        }
+    </script>
+</head>
+<body>
+
+    <div class="cart-container">
+        <h2>My Cart</h2>
+        <div class="cart-item" id="item1-container">
+            <span id="item1">Paris > Lyon</span>
+            <span id="time1">20:09</span>
+            <span id="price1">103€</span>
+            <button class="delete-btn" onclick="deleteItem('item1-container')">X</button>
+        </div>
+    
+        <div class="cart-item" id="item2-container">
+            <span id="item2">Marseille > Lyon</span>
+            <span id="time2">22:10</span>
+            <span id="price2">127€</span>
+            <button class="delete-btn" onclick="deleteItem('item2-container')">X</button>
+        </div>
+    
+        <div class="total-amount">
+            <div class="total-text">
+                <span>Total :</span> <span id="total">230€</span>
+            </div>
+            <button class="purchase">Purchase</button>
+        </div>
+    </div>
+    
+    
+    
+    
+</div>
+
+<script>
+    updateCart('Paris > Lyon', '21:00', 110);
+</script>
+<script>src="script.js"</script>
+</body>
+</html>

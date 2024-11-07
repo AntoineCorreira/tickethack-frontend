@@ -114,6 +114,11 @@ header {
    color: #4d9986;
 }
 
+#title a {
+   text-decoration: none;
+   color: inherit;
+}
+
 #menu {
    display: flex;
    flex-direction: row;
